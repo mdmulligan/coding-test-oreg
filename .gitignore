@@ -9,6 +9,12 @@
 !.vscode/tasks.json
 !.vscode/*.code-snippets
 
+### Local History ###
+.history/
+
+### Built Visual Studio Code Extensions ###
+*.vsix
+
 ## Vim ##
 ### Swap ###
 [._]*.s[a-v][a-z]
@@ -45,3 +51,9 @@ node_modules/
 # Caches #
 ## ESLint ##
 .eslintcache
+
+# Artifacts #
+## Vite ##
+coverage/
+dist/
+__screenshots__/
