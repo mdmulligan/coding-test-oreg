@@ -1,0 +1,78 @@
+{
+    "name": "oregan-coding-test",
+    "description": "",
+    "version": "0.0.0",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "private": true,
+    "author": {
+        "name": "M. Damian Mulligan",
+        "email": "damian@dmulligan.ca",
+        "url": "https://dmulligan.ca"
+    },
+    "homepage": "https://mdmulligan.github.io/oregan-coding-test/",
+    "bugs": {
+        "url": "https://github.com/glektarssza/oregan-coding-test/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/glektarssza/oregan-coding-test.git"
+    },
+    "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6",
+    "type": "module",
+    "scripts": {
+        "dev": "vite serve --mode development",
+        "test": "pnpm run test:base --run --coverage",
+        "test:base": "vitest",
+        "test:ci": "pnpm run test",
+        "test:ui": "pnpm run test --ui",
+        "test:watch": "pnpm run test --run --watch",
+        "lint": "pnpm run eslint && pnpm run prettier",
+        "lint:fix": "pnpm run eslint:fix && pnpm run prettier:fix",
+        "lint:ci": "pnpm run eslint:ci && pnpm run prettier:ci",
+        "eslint": "eslint --no-error-on-unmatched-pattern --cache ./src/ ./tests/",
+        "eslint:fix": "eslint --no-error-on-unmatched-pattern --cache --fix ./src/ ./tests/",
+        "eslint:ci": "eslint --no-error-on-unmatched-pattern ./src/ ./tests/",
+        "prettier": "prettier --config ./.prettierrc.json --ignore-path ./.prettierignore --ignore-path ./.gitignore --cache --check .",
+        "prettier:fix": "prettier --config ./.prettierrc.json --ignore-path ./.prettierignore --ignore-path ./.gitignore --cache --write .",
+        "prettier:ci": "prettier --config ./.prettierrc.json --ignore-path ./.prettierignore --ignore-path ./.gitignore --check .",
+        "build": "pnpm run build:prod",
+        "build:all": "pnpm run build:prod && pnpm run build:dev",
+        "build:prod": "vite build --mode production",
+        "build:dev": "vite build --mode development",
+        "clean": "pnpm run clean:prod",
+        "clean:all": "pnpm run clean:prod && pnpm run clean:dev",
+        "clean:prod": "del-cli \"./dist/\"",
+        "clean:dev": "del-cli \"./dist/\"",
+        "rebuild": "pnpm run rebuild:prod",
+        "rebuild:all": "pnpm run clean:all && pnpm run build:all",
+        "rebuild:prod": "pnpm run clean:prod && pnpm run build:prod",
+        "rebuild:dev": "pnpm run clean:dev && pnpm run build:dev"
+    },
+    "dependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.23.0",
+        "@faker-js/faker": "^9.6.0",
+        "@rollup/plugin-replace": "^6.0.2",
+        "@types/node": "^22.13.13",
+        "@types/react": "^19.0.12",
+        "@types/react-dom": "^19.0.4",
+        "@vitest/browser": "^3.0.9",
+        "@vitest/coverage-istanbul": "^3.0.9",
+        "@vitest/ui": "^3.0.9",
+        "bootstrap-icons": "^1.11.3",
+        "del-cli": "^6.0.0",
+        "eslint": "^9.23.0",
+        "eslint-config-prettier": "^10.1.1",
+        "eslint-plugin-tsdoc": "^0.4.0",
+        "prettier": "^3.5.3",
+        "sass-embedded": "^1.86.0",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.8.2",
+        "typescript-eslint": "^8.27.0",
+        "vite": "^6.2.3",
+        "vitest": "^3.0.9"
+    }
+}
