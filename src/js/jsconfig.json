@@ -1,9 +1,10 @@
 {
     "extends": "../../jsconfig.json",
     "compilerOptions": {
+        "jsx": "react",
         "exactOptionalPropertyTypes": false,
-        "noEmit": false,
+        "noEmit": true,
         "types": []
     },
-    "include": ["./*.js", "./**/*.js"]
+    "include": ["./*.jsx", "./**/*.jsx", "./*.js", "./**/*.js"]
 }
