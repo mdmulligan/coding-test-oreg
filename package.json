@@ -56,9 +56,6 @@
         "@eslint/js": "^9.23.0",
         "@faker-js/faker": "^9.6.0",
         "@rollup/plugin-replace": "^6.0.2",
-        "@types/node": "^22.13.13",
-        "@types/react": "^19.0.12",
-        "@types/react-dom": "^19.0.4",
         "@vitest/browser": "^3.0.9",
         "@vitest/coverage-istanbul": "^3.0.9",
         "@vitest/ui": "^3.0.9",
@@ -66,12 +63,8 @@
         "del-cli": "^6.0.0",
         "eslint": "^9.23.0",
         "eslint-config-prettier": "^10.1.1",
-        "eslint-plugin-tsdoc": "^0.4.0",
         "prettier": "^3.5.3",
         "sass-embedded": "^1.86.0",
-        "ts-node": "^10.9.2",
-        "typescript": "^5.8.2",
-        "typescript-eslint": "^8.27.0",
         "vite": "^6.2.3",
         "vitest": "^3.0.9"
     }
