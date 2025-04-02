@@ -1,0 +1,56 @@
+.page-index {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: cornflowerblue;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.input-form-password {
+    margin-top: 0.5rem;
+    flex: 1 0 auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: stretch;
+}
+
+.input-show-password {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 2rem;
+    min-width: 2rem;
+    margin-left: 0.5rem;
+    border: 3px solid darken(gray, 30%);
+    background-color: #ffffff;
+}
+
+.input-show-password:focus {
+    border: 3px solid goldenrod;
+    outline: none;
+}
+
+#oregan-input-input-email {
+    min-width: 16rem;
+}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import IndexPage from './pages/index';
 
@@ -7,4 +7,8 @@ const root = createRoot(
         document.getElementById('app') ??
         document.body
 );
-root.render(<IndexPage />);
+root.render(
+    <StrictMode>
+        <IndexPage />
+    </StrictMode>
+);

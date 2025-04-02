@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      bootstrap-icons:
+        specifier: ^1.11.3
+        version: 1.11.3
       react:
         specifier: ^19.0.0
         version: 19.1.0
@@ -33,9 +36,6 @@ importers:
       '@vitest/ui':
         specifier: ^3.0.9
         version: 3.1.1(vitest@3.1.1)
-      bootstrap-icons:
-        specifier: ^1.11.3
-        version: 1.11.3
       del-cli:
         specifier: ^6.0.0
         version: 6.0.0
