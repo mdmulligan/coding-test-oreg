@@ -76,15 +76,15 @@ const config = defineConfig(({mode}) => {
                     FAKER_SEED: JSON.stringify(process.env['FAKER_SEED'])
                 },
                 regexValues: {
-                    '[^"]*bootstrap-icons\\.woff2?\\?[^"]*':
-                        '/assets/bootstrap-icons.woff'
+                    '[^"]*bootstrap-icons\\.woff2\\?[^"]*': `${mode !== 'development' ? '/oregan-coding-test/' : '/'}assets/bootstrap-icons.woff2`,
+                    '[^"]*bootstrap-icons\\.woff\\?[^"]*': `${mode !== 'development' ? '/oregan-coding-test/' : '/'}assets/bootstrap-icons.woff`
                 }
             }),
             cp({
                 targets: [
                     {
                         src: './node_modules/bootstrap-icons/font/fonts/bootstrap-icons.*',
-                        dest: './public/assets/'
+                        dest: './dist/assets/'
                     }
                 ]
             })
