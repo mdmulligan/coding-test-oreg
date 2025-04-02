@@ -1,0 +1,28 @@
+.oregan-input-container {
+    min-height: 2rem;
+
+    border: 3px solid darken(gray, 30%);
+
+    background-color: #ffffff;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    flex: 1 0;
+}
+
+.oregan-input-container:focus {
+    border: 3px solid goldenrod;
+    outline: none;
+}
+
+.oregan-input {
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.oregan-input-placeholder {
+    color: lighten(black, 30%);
+}

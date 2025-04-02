@@ -49,6 +49,7 @@
         "rebuild:dev": "pnpm run clean:dev && pnpm run build:dev"
     },
     "dependencies": {
+        "bootstrap-icons": "^1.11.3",
         "react": "^19.0.0",
         "react-dom": "^19.0.0"
     },
