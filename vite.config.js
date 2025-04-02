@@ -84,7 +84,7 @@ const config = defineConfig(({mode}) => {
                 targets: [
                     {
                         src: './node_modules/bootstrap-icons/font/fonts/bootstrap-icons.*',
-                        dest: './public/assets/'
+                        dest: './dist/assets/'
                     }
                 ]
             })
