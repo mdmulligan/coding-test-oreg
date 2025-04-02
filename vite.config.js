@@ -6,7 +6,8 @@ import os from 'node:os';
 import path from 'node:path';
 
 //-- NPM Packages
-import replacePlugin from '@rollup/plugin-replace';
+import replacePlugin from 'rollup-plugin-replace-regex';
+import cp from 'vite-plugin-cp';
 import {defineConfig} from 'vitest/config';
 
 /**
@@ -70,9 +71,22 @@ const config = defineConfig(({mode}) => {
         plugins: [
             replacePlugin({
                 preventAssignment: true,
+                sourceMap: mode !== 'development' ? false : true,
                 values: {
                     FAKER_SEED: JSON.stringify(process.env['FAKER_SEED'])
+                },
+                regexValues: {
+                    '[^"]*bootstrap-icons\\.woff2?\\?[^"]*':
+                        '/assets/bootstrap-icons.woff'
                 }
+            }),
+            cp({
+                targets: [
+                    {
+                        src: './node_modules/bootstrap-icons/font/fonts/bootstrap-icons.*',
+                        dest: './public/assets/'
+                    }
+                ]
             })
         ]
     };
