@@ -18,7 +18,7 @@ const config = defineConfig(({mode}) => {
         resolve: {
             extensions: ['.tsx', '.ts', '.jsx', '.js']
         },
-        base: mode !== 'development' ? '/oregan-code-test/' : '/',
+        base: mode !== 'development' ? '/oregan-coding-test/' : '/',
         css: {
             preprocessorOptions: {
                 scss: {
