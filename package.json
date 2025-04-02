@@ -56,9 +56,9 @@
     "devDependencies": {
         "@eslint/js": "^9.23.0",
         "@faker-js/faker": "^9.6.0",
-        "@vitest/browser": "^3.0.9",
-        "@vitest/coverage-istanbul": "^3.0.9",
-        "@vitest/ui": "^3.0.9",
+        "@vitest/browser": "^3.1.1",
+        "@vitest/coverage-istanbul": "^3.1.1",
+        "@vitest/ui": "^3.1.1",
         "bootstrap-icons": "^1.11.3",
         "del-cli": "^6.0.0",
         "eslint": "^9.23.0",
@@ -70,6 +70,6 @@
         "sass-embedded": "^1.86.0",
         "vite": "^6.2.3",
         "vite-plugin-cp": "^4.0.8",
-        "vitest": "^3.0.9"
+        "vitest": "^3.1.1"
     }
 }
