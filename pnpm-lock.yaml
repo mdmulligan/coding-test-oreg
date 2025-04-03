@@ -17,6 +17,9 @@ importers:
       react-dom:
         specifier: ^19.1.0
         version: 19.1.0(react@19.1.0)
+      react-simple-keyboard:
+        specifier: ^3.8.58
+        version: 3.8.58(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
     devDependencies:
       '@eslint/js':
         specifier: ^9.23.0
@@ -1324,6 +1327,12 @@ packages:
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
+
+  react-simple-keyboard@3.8.58:
+    resolution: {integrity: sha512-xKrw66QLaje3M1o9o5ne/Q1Aup7tFMvJkFMDIWbc5gBPHmJmSFztxtUYMxFU8ieNmGslwl+2+WWavpUwRJFopw==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react@19.1.0:
     resolution: {integrity: sha512-FS+XFBNvn3GTAWq26joslQgWNoFu08F4kl0J4CgdNKADkdSGXQyTCnKteIAJy96Br6YbpEU1LSzV5dYtjMkMDg==}
@@ -2922,6 +2931,11 @@ snapshots:
       scheduler: 0.26.0
 
   react-is@17.0.2: {}
+
+  react-simple-keyboard@3.8.58(react-dom@19.1.0(react@19.1.0))(react@19.1.0):
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   react@19.1.0: {}
 
