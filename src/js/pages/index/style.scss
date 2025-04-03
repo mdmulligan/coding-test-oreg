@@ -63,3 +63,11 @@
 #oregan-input-input-email {
     min-width: 16rem;
 }
+
+.keyboard {
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}

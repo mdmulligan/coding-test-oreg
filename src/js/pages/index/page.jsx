@@ -1,5 +1,7 @@
 //-- NPM Packages
 import React, {useState} from 'react';
+import KeyboardReact from 'react-simple-keyboard';
+import 'react-simple-keyboard/build/css/index.css';
 
 //-- Project Code
 import Input from '../../components/input';
@@ -46,6 +48,9 @@ const IndexPage = () => {
                             className={passwordInputClassList.join(' ')}></span>
                     </div>
                 </div>
+            </div>
+            <div className='keyboard'>
+                <KeyboardReact />
             </div>
         </div>
     );
