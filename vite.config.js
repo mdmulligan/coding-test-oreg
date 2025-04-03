@@ -11,6 +11,11 @@ import cp from 'vite-plugin-cp';
 import {defineConfig} from 'vitest/config';
 
 /**
+ * The base URL the site lives under in production.
+ */
+const BASE_URL = '/coding-test-oreg/';
+
+/**
  * The ViteJS configuration.
  */
 const config = defineConfig(({mode}) => {
@@ -19,7 +24,7 @@ const config = defineConfig(({mode}) => {
         resolve: {
             extensions: ['.tsx', '.ts', '.jsx', '.js']
         },
-        base: mode !== 'development' ? '/coding-test-oreg/' : '/',
+        base: mode !== 'development' ? BASE_URL : '/',
         css: {
             preprocessorOptions: {
                 scss: {
@@ -76,8 +81,8 @@ const config = defineConfig(({mode}) => {
                     FAKER_SEED: JSON.stringify(process.env['FAKER_SEED'])
                 },
                 regexValues: {
-                    '[^"]*bootstrap-icons\\.woff2\\?[^"]*': `${mode !== 'development' ? '/oregan-coding-test/' : '/'}assets/bootstrap-icons.woff2`,
-                    '[^"]*bootstrap-icons\\.woff\\?[^"]*': `${mode !== 'development' ? '/oregan-coding-test/' : '/'}assets/bootstrap-icons.woff`
+                    '[^"]*bootstrap-icons\\.woff2\\?[^"]*': `${mode !== 'development' ? BASE_URL : '/'}assets/bootstrap-icons.woff2`,
+                    '[^"]*bootstrap-icons\\.woff\\?[^"]*': `${mode !== 'development' ? BASE_URL : '/'}assets/bootstrap-icons.woff`
                 }
             }),
             cp({
