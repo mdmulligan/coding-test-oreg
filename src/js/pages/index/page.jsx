@@ -1,5 +1,5 @@
 //-- NPM Packages
-import React, {use, useEffect, useMemo, useRef, useState} from 'react';
+import React, {useEffect, useMemo, useRef, useState} from 'react';
 import KeyboardReact from 'react-simple-keyboard';
 import 'react-simple-keyboard/build/css/index.css';
 

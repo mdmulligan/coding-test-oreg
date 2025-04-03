@@ -1,10 +1,4 @@
-import React, {
-    Suspense,
-    useDeferredValue,
-    useEffect,
-    useMemo,
-    useState
-} from 'react';
+import React, {useEffect, useMemo, useState} from 'react';
 
 /**
  * An enumeration representing possible kinds of cursors.
