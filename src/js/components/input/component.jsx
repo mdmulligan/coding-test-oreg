@@ -140,13 +140,13 @@ const Input = (props) => {
     const cursorBlink = props.cursorBlink ?? false;
     const cursorBlinkTime = props.cursorBlinkTime ?? 2000;
     const [isFocused, setFocused] = useState(false);
-    const [value, setValue] = useState(null);
     const [hideLast, setHideLast] = useState(false);
+    const [lastDisplayValue, setLastDisplayValue] = useState('');
     const [hideLastTimeout, setHideLastTimeout] = useState(null);
     const [blinkInterval, setBlinkInterval] = useState(null);
     const [cursorVisible, setCursorVisible] = useState(true);
     const classList = ['oregan-input'];
-    if (!value && props.placeholder) {
+    if (!props.value && props.placeholder) {
         classList.push('oregan-input-placeholder');
     }
     const cursorProp = props.cursor ?? CursorEnum.Bar;
@@ -194,25 +194,39 @@ const Input = (props) => {
             )
         );
     }, [props.cursorBlinkTime, props.cursorBlink, cursorVisible, isFocused]);
-    const displayValue = useMemo(
-        () =>
-            computeDisplayValue(
-                value,
-                isFocused,
-                hidden,
-                hideCharacter,
-                props.placeholder,
-                hideLast
-            ),
-        [
+    const displayValue = useMemo(() => {
+        if (props.value && props.value.length - 1 === lastDisplayValue.length) {
+            if (hidden && (props.hideDelay ?? 0) > 0) {
+                if (hideLastTimeout) {
+                    clearTimeout(hideLastTimeout);
+                }
+                setHideLast(false);
+                setHideLastTimeout(
+                    setTimeout(() => {
+                        setHideLast(true);
+                        setHideLastTimeout(null);
+                    }, props.hideDelay)
+                );
+            }
+        }
+        const value = computeDisplayValue(
+            props.value,
             isFocused,
-            props.hidden,
+            hidden,
+            hideCharacter,
             props.placeholder,
-            value,
-            props.hideCharacter,
             hideLast
-        ]
-    );
+        );
+        setLastDisplayValue(value);
+        return value;
+    }, [
+        isFocused,
+        props.hidden,
+        props.placeholder,
+        props.value,
+        props.hideCharacter,
+        hideLast
+    ]);
     return (
         <div
             id={`oregan-input-${props.id}`}
@@ -220,10 +234,11 @@ const Input = (props) => {
             tabIndex={1}
             onFocus={() => setFocused(true)}
             onBlur={() => setFocused(false)}
+            ref={props.ref}
             onKeyDown={
                 isFocused ?
                     (event) =>
-                        inputHandler(event, value, (newValue) => {
+                        inputHandler(event, props.value, (newValue) => {
                             if (props.onValueChanged) {
                                 props.onValueChanged(newValue);
                             }
@@ -239,7 +254,6 @@ const Input = (props) => {
                                     }, props.hideDelay)
                                 );
                             }
-                            setValue(newValue);
                         })
                 :   null
             }>
