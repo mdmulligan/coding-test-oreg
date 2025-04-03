@@ -8,8 +8,16 @@
     padding: 0;
     overflow: hidden;
 
-    background-color: cornflowerblue;
+    background-color: white;
 
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.logo-container {
+    flex: 0 1 50vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -17,6 +25,7 @@
 }
 
 .input-form {
+    flex: 0 1 auto;
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
@@ -42,12 +51,12 @@
     min-height: 2rem;
     min-width: 2rem;
     margin-left: 0.5rem;
-    border: 3px solid darken(gray, 30%);
-    background-color: #ffffff;
+    border: 3px solid #a67b77;
+    background-color: whitesmoke;
 }
 
 .input-show-password:focus {
-    border: 3px solid goldenrod;
+    border: 3px solid #a69b77;
     outline: none;
 }
 

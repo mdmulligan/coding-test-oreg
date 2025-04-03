@@ -1,5 +1,11 @@
+//-- NPM Packages
 import React, {useState} from 'react';
+
+//-- Project Code
 import Input from '../../components/input';
+
+//-- Assets
+import logo from '/assets/oregan-networks.png';
 
 /**
  * The properties used to render an {@link IndexPage} component.
@@ -20,13 +26,17 @@ const IndexPage = () => {
     );
     return (
         <div className='page-index'>
+            <div className='logo-container'>
+                <img src={logo} />
+            </div>
             <div className='input-form'>
-                <Input id='input-email' placeholder='Email' />
+                <Input id='input-email' placeholder='Email' cursorBlink />
                 <div className='input-form-password'>
                     <Input
                         id='input-password'
                         placeholder='Password'
                         hidden={passwordHidden}
+                        hideDelay={1500}
                     />
                     <div
                         className='input-show-password'
