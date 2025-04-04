@@ -1,0 +1,9 @@
+{
+    "extends": "../jsconfig.json",
+    "compilerOptions": {
+        "exactOptionalPropertyTypes": false,
+        "noEmit": true,
+        "types": []
+    },
+    "include": ["./*.js", "./**/*.js"]
+}
